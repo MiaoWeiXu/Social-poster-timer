@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>帖子停留计时器</title>
+  <link rel="stylesheet" href="../src/theme.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>帖子停留计时器</h1>
+    <span class="muted">今天</span>
+  </header>
+
+  <section id="live" class="live card" hidden>
+    <span class="dot"></span>
+    <div class="live-body">
+      <div id="live-title" class="live-title"></div>
+      <div class="muted">正在看 · 已停留 <strong id="live-time" class="num">0:00</strong></div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="card stat"><div id="s-count" class="stat-value">0</div><div class="stat-label">点开的帖子</div></div>
+    <div class="card stat"><div id="s-total" class="stat-value">0秒</div><div class="stat-label">总停留</div></div>
+    <div class="card stat"><div id="s-median" class="stat-value">0秒</div><div class="stat-label">中位停留</div></div>
+    <div class="card stat"><div id="s-quick" class="stat-value">0</div><div class="stat-label">5 秒内就退出</div></div>
+  </section>
+
+  <section>
+    <h2>最近</h2>
+    <ul id="recent" class="recent"></ul>
+    <p id="empty" class="empty muted">今天还没有记录。去 Instagram 点开一个帖子试试。</p>
+  </section>
+
+  <footer>
+    <button id="open-dashboard" class="primary">查看完整统计</button>
+  </footer>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

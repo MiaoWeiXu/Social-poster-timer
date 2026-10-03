@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>帖子停留统计</title>
+  <link rel="stylesheet" href="../src/theme.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <main>
+    <header class="top">
+      <div>
+        <h1>帖子停留统计</h1>
+        <p class="muted">只统计帖子在你眼前的时间：标签页在前台、浏览器窗口有焦点、且 2 分钟内有操作。</p>
+      </div>
+      <nav id="range" class="range" role="tablist">
+        <button data-days="1" class="active">今天</button>
+        <button data-days="7">7 天</button>
+        <button data-days="30">30 天</button>
+        <button data-days="all">全部</button>
+      </nav>
+    </header>
+
+    <section class="stats">
+      <div class="card stat"><div id="s-count" class="stat-value">0</div><div class="stat-label">点开的帖子</div></div>
+      <div class="card stat"><div id="s-total" class="stat-value">0秒</div><div class="stat-label">总停留</div></div>
+      <div class="card stat"><div id="s-avg" class="stat-value">0秒</div><div class="stat-label">平均 / 中位</div></div>
+      <div class="card stat"><div id="s-max" class="stat-value">0秒</div><div class="stat-label">最长一次</div></div>
+      <div class="card stat"><div id="s-quick" class="stat-value">0</div><div class="stat-label">5 秒内就退出</div></div>
+    </section>
+
+    <section class="grid">
+      <div class="card panel wide">
+        <h2 id="bins-title">时长分布</h2>
+        <div id="bins" class="columns"></div>
+      </div>
+      <div class="card panel">
+        <h2>点开多久就退出</h2>
+        <div id="buckets" class="hbars"></div>
+      </div>
+      <div class="card panel">
+        <h2>按平台</h2>
+        <table class="table">
+          <thead><tr><th>平台</th><th class="r">帖子</th><th class="r">总停留</th><th class="r">平均</th></tr></thead>
+          <tbody id="platforms"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card panel">
+      <div class="panel-head">
+        <h2>记录</h2>
+        <div class="row">
+          <label class="muted">排序
+            <select id="sort">
+              <option value="recent">最近</option>
+              <option value="longest">停留最久</option>
+            </select>
+          </label>
+          <button id="export">导出 CSV</button>
+          <button id="clear" class="danger">清空数据</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>平台</th><th>帖子</th><th>打开于</th><th class="r">停留</th><th class="r">打开总时长</th></tr></thead>
+          <tbody id="sessions"></tbody>
+        </table>
+      </div>
+      <p id="empty" class="muted empty">这个时间段还没有记录。</p>
+      <p id="more" class="muted empty" hidden></p>
+    </section>
+  </main>
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>

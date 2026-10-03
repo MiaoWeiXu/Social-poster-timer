@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "帖子停留计时器 · Post Dwell Timer",
+  "short_name": "帖子计时",
+  "version": "0.1.0",
+  "description": "记录你在 Instagram 等社交媒体上点开每个帖子后停留了多久才退出。数据只保存在本地。",
+  "minimum_chrome_version": "116",
+  "permissions": ["storage", "idle", "alarms"],
+  "host_permissions": [
+    "https://*.instagram.com/*",
+    "https://x.com/*",
+    "https://*.x.com/*",
+    "https://twitter.com/*",
+    "https://*.twitter.com/*",
+    "https://*.reddit.com/*",
+    "https://*.tiktok.com/*",
+    "https://*.xiaohongshu.com/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "帖子停留计时器",
+    "default_popup": "popup/popup.html"
+  },
+  "options_ui": {
+    "page": "dashboard/dashboard.html",
+    "open_in_tab": true
+  }
+}
