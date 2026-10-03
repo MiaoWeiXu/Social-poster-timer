@@ -6,6 +6,7 @@
 
 A privacy-first Chrome / Edge extension (Manifest V3) for Instagram, X, Reddit, TikTok and Xiaohongshu.
 
+[![Tests](https://github.com/MiaoWeiXu/Social-poster-timer/actions/workflows/test.yml/badge.svg)](https://github.com/MiaoWeiXu/Social-poster-timer/actions/workflows/test.yml)
 ![Manifest V3](https://img.shields.io/badge/Manifest-V3-4285F4?logo=googlechrome&logoColor=white)
 ![Zero dependencies](https://img.shields.io/badge/dependencies-0-success)
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue)
@@ -51,7 +52,7 @@ The extension isn't on the Chrome Web Store yet. To load it from source:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/social-post-timer.git
+   git clone https://github.com/MiaoWeiXu/Social-poster-timer.git
    ```
 2. Open `chrome://extensions` (or `edge://extensions`).
 3. Turn on **Developer mode**.

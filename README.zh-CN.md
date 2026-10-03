@@ -47,7 +47,7 @@
 
 1. 克隆仓库
    ```bash
-   git clone https://github.com/<your-username>/social-post-timer.git
+   git clone https://github.com/MiaoWeiXu/Social-poster-timer.git
    ```
 2. 打开 `chrome://extensions`（Edge：`edge://extensions`）
 3. 打开右上角 **开发者模式**
